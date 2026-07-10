@@ -1,2 +1,2 @@
-# CSS-FINAL-ASSIGNMENT
-CSS Final Assignment
+# School Projects
+These are Projects I worked on during Ngee Ann Polytechnic
