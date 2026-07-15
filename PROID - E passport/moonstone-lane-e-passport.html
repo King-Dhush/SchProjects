@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Moonstone Lane — E-Stamp Passport</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="experience">
+    <header class="topbar"><span class="brand">☾ MOONSTONE LANE</span><span>MONOPOLY GAME</span></header>
+    <section class="setup" id="setup">
+      <p class="eyebrow">WELCOME, EXPLORER</p><h1>Create your e-passport</h1>
+      <p>Enter your name and add a photo to begin the Moonstone Lane adventure.</p>
+      <label class="field">Your name<input id="nameInput" type="text" maxlength="26" placeholder="e.g. Mei Lin"></label>
+      <label class="upload" for="photoInput"><span id="uploadLabel">＋ Add your photo</span><input id="photoInput" type="file" accept="image/*"></label>
+      <button class="primary" id="createPassport">CREATE MY PASSPORT</button>
+    </section>
+
+    <section class="passport-wrap hidden" id="passportWrap" aria-label="Moonstone Lane open e-passport">
+      <div class="passport">
+        <article class="page identity-page">
+          <div class="page-top"><span>MOONSTONE LANE</span><span>☾</span></div>
+          <p class="passport-type">E-PASSPORT · MONOPOLY GAME</p>
+          <h2>EXPLORER<br>IDENTITY</h2>
+          <div class="identity">
+            <div class="portrait" id="portrait"><span>YOUR<br>PHOTO</span></div>
+            <div class="person-data"><span>NAME</span><strong id="passportName">Guest Explorer</strong><span>MISSION</span><strong>Collect the moonstone stamps</strong><span>ISSUED BY</span><strong>Moonstone Lane</strong></div>
+          </div>
+          <div class="passport-number"><span>E-PASSPORT NO.</span><b id="passportNo">ML-000000</b><span>VALID FOR THIS EVENT</span></div>
+          <p class="fine-print">A magical game passport — not an official travel document.</p>
+        </article>
+
+        <article class="page mission-page">
+          <div class="page-top"><span>YOUR MISSION</span><span id="stampCount">0 / 5 STAMPS</span></div>
+          <h2>STAMP<br>ADVENTURE</h2>
+          <p class="instruction">At each stop, show this passport to staff. They scan your check-in QR to award a stamp.</p>
+          <div class="route-card"><span class="route-label">YOUR RANDOMIZED ROUTE</span><div id="routeList">Generating your stops…</div></div>
+          <div class="stamps" id="stamps">
+            <button class="stamp" data-stop="Café Stop"><span>1</span><b>CAFÉ</b><em>Tap to check in</em></button>
+            <button class="stamp" data-stop="Workshop Stop 1"><span>2</span><b>WORKSHOP</b><em>Tap to check in</em></button>
+            <button class="stamp" data-stop="Workshop Stop 2"><span>3</span><b>WORKSHOP</b><em>Tap to check in</em></button>
+            <button class="stamp" data-stop="Workshop Stop 3"><span>4</span><b>WORKSHOP</b><em>Tap to check in</em></button>
+            <button class="stamp" data-stop="Instagram Follow"><span>5</span><b>FOLLOW</b><em>@moonstonelane</em></button>
+          </div>
+          <div class="reward locked" id="reward"><b id="rewardTitle">COLLECT ALL 5 STAMPS</b><span>Unlock a lucky draw for a gemstone-themed keychain or bracelet at a workshop of your choice.</span></div>
+        </article>
+      </div>
+      <button class="secondary" id="resetPassport">Start a new passport</button>
+    </section>
+  </main>
+
+  <dialog id="qrDialog">
+    <div class="modal-top"><span>MOONSTONE LANE CHECK-IN</span><button class="close" id="closeQr" aria-label="Close">×</button></div>
+    <h2 id="modalStop">Check in</h2>
+    <p>Show this code to the staff member at this stop.</p>
+    <div class="qr-code" aria-label="Decorative simulated QR code"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <p class="token">DEMO CHECK-IN · <span id="checkToken">ML-DEMO</span></p>
+    <div class="demo-panel"><b>Demo staff control</b><span>Simulate the staff member scanning this QR code.</span><button class="primary" id="simulateScan">SIMULATE SCAN &amp; AWARD STAMP</button></div>
+  </dialog>
+  <script src="script.js"></script>
+</body>
+</html>
